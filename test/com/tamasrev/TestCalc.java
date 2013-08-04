@@ -36,9 +36,10 @@ public class TestCalc {
 	@Test
 	public void testSum() throws Exception {
 		//GIVEN - nothing to do
+		String source = "sum(2, 3)";
 		
 		//WHEN
-		Object result = engine.eval("sum(2, 3)");
+		Object result = engine.eval(source);
 		
 		//THEN
 		assertEquals(5.0, result);
