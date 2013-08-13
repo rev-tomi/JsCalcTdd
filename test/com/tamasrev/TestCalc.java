@@ -6,7 +6,6 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.Map;
 
-import javax.script.ScriptContext;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 
@@ -21,8 +20,6 @@ public class TestCalc {
 	public void setUp() throws Exception {
 		ScriptEngineManager factory = new ScriptEngineManager();
 		engine = factory.getEngineByName("JavaScript");
-		ScriptContext context = engine.getContext();
-		context.setAttribute("name", "JavaScript", ScriptContext.ENGINE_SCOPE);
 		
 		String[] sources = new String[] {
 			"/com/tamasrev/Calc.js"	
@@ -35,7 +32,7 @@ public class TestCalc {
 
 	@Test
 	public void testSum() throws Exception {
-		//GIVEN - nothing to do
+		//GIVEN
 		String source = "sum(2, 3)";
 		
 		//WHEN
